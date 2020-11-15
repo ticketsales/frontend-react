@@ -5,18 +5,18 @@ export default class PostCreate extends Component {
   constructor(props) {
     super(props);
     this.postInput = React.createRef();
+  }
 
-    this.onSubmit = async event => {
-      event.preventDefault();
 
-      await axios.post('http://localhost:4000/posts', {
+  onSubmit = () => {
+      
+      axios.post('http://localhost:4000/posts', {
         title : this.postInput.value
       });
-  
+
       this.postInput.value = "";
-    };
+  };
   
-  }
   
   render() {
     return (
